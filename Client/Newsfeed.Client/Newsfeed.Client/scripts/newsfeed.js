@@ -24,8 +24,8 @@
             var responseMessages = data.messages;
             allMessages.text('');
 
-            responseMessages.forEach(function () {
-                var message = '<div>' + username + ": " + msgText + "</div>";
+            responseMessages.forEach(function (msg) {
+                var message = '<div>' + msg.username + ": " + msg.msgText + "</div>";
                 allMessages.append(message);
             });
 

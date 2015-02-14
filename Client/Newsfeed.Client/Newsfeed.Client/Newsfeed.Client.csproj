@@ -87,6 +87,8 @@
     <Content Include="scripts\jquery-1.9.1.min.js" />
     <Content Include="scripts\newsfeed.js" />
     <Content Include="scripts\npm.js" />
+    <Content Include="scripts\usersRating.js" />
+    <Content Include="UsersRating.html" />
     <Content Include="Web.config" />
     <Content Include="scripts\jquery-1.9.1.min.map" />
   </ItemGroup>
