@@ -70,10 +70,35 @@ module.exports = {
         User.find({}).exec(function (err, collection) {
             if (err) {
                 console.log('Users could not be loaded: ' + err);
-                res.status(400).json({message: err});
+                res.status(400).json({message: 'Users could not be loaded: '+err});
             }
 
             res.send(collection);
+        })
+    },
+    muteUser: function (req, res, next) {
+        User.findOne({_id:req.params.id}).exec(function (err, user) {
+            if (err || !user) {
+                console.log('User could not be muted: ' + err);
+                res.status(400).json({message: 'User could not be muted: '+err});
+            }
+            else{
+                User.findOne({_id:req.user._id}).exec(function (err, current) {
+                    if (err || !current) {
+                        console.log('Something went wrong: ' + err);
+                        res.status(400).json({message: 'Something went wrong: '+err});
+                    }else{
+                        current.mutes.push(user._id);
+                        current.save(function(err){
+                            if(err){
+                                res.status(400).json({message: 'User could not be muted: '+err});
+                            }else{
+                                res.status(200).json({message:'Success'})
+                            }
+                        })
+                    }
+                })
+            }
         })
     }
 };

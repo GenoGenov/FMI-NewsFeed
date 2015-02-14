@@ -5,7 +5,7 @@ var userSchema = mongoose.Schema({
     username: { type: String, require: '{PATH} is required', unique: true },
     salt: String,
     hashPass: String,
-    avatar:Buffer
+    mutes:[{type:mongoose.Schema.Types.ObjectId, ref:'User'}]
 });
 
 userSchema.method({
@@ -25,14 +25,7 @@ module.exports.seedInitialUsers = function () {
         }
 
         if (collection.length === 0) {
-            var salt;
-            var hashedPwd;
 
-            salt = encryption.generateSalt();
-            hashedPwd = encryption.generateHashedPassword(salt, 'Kiril');
-            User.create({username: 'kiril', firstName: 'Kiril', lastName: 'Tsarnakliyski', salt: salt, hashPass: hashedPwd, roles: ['admin']});
-            User.create({username: 'simo', firstName: 'Simo', lastName: 'Bidjev', salt: salt, hashPass: hashedPwd, roles: ['hotelOwner']});
-            console.log('Users added to database...');
         }
     });
 };

@@ -9,6 +9,13 @@ module.exports = function (app) {
     app.post('/api/users', controllers.users.createUser);
     app.post('/api/users/avatar', controllers.users.addAvatar);
     app.put('/api/users', auth.isAuthenticated, controllers.users.updateUser);
+    app.put('/api/users/mute/:id', auth.isAuthenticated, controllers.users.muteUser);
+
+    app.get('/api/messages',controllers.messages.getMessages);
+    app.post('/api/messages/create',controllers.messages.createMessage);
+
+    app.post('/api/likes/like/:id',controllers.likes.like);
+    app.get('/api/likes/last/:id',controllers.likes.getLastLike);
 
 //    app.get('/api/hotels', controllers.hotels.getAllHotels);
 //    app.get('/api/hotels/available'/*, auth.isAuthenticated*/, controllers.hotels.getAvailableHotels);

@@ -1,6 +1,6 @@
 var mongoose = require('mongoose'),
     user = require('../models/User'),
-    hotel = require('../models/Hotel');
+    message=require('../models/Message')
 
 
 module.exports = function (config) {
