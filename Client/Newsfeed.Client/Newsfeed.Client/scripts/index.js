@@ -14,11 +14,12 @@
         };
         $.ajax({
             type: "POST",
-            url: 'localhost:3030/login',
+            url: 'http://localhost:3030/login',
             data: JSON.stringify(userData),
             success: function () { window.location = "newsfeed.html" },
             error: function () { message.text("Login Failed!").fadeOut(3000) },
-            contentType: 'application/json'
+            contentType: 'application/json',
+            dataType: 'json',
         });
     });
 
@@ -33,7 +34,8 @@
             data: JSON.stringify(userData),
             success: function () { message.text("Registration Successful!").fadeOut(3000) },
             error: function () { message.text("Registration Failed!").fadeOut(3000) },
-            contentType: 'application/json'
+            contentType: 'application/json',
+            dataType: 'json',
         });
     });
 }());
