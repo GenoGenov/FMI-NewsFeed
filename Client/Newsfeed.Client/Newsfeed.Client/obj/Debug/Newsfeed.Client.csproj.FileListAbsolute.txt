@@ -1,0 +1,6 @@
+C:\Users\gesh\Documents\GitHub\FMI-NewsFeed\Client\Newsfeed.Client\Newsfeed.Client\bin\Newsfeed.Client.dll.config
+C:\Users\gesh\Documents\GitHub\FMI-NewsFeed\Client\Newsfeed.Client\Newsfeed.Client\bin\Newsfeed.Client.dll
+C:\Users\gesh\Documents\GitHub\FMI-NewsFeed\Client\Newsfeed.Client\Newsfeed.Client\bin\Newsfeed.Client.pdb
+C:\Users\gesh\Documents\GitHub\FMI-NewsFeed\Client\Newsfeed.Client\Newsfeed.Client\obj\Debug\Newsfeed.Client.csprojResolveAssemblyReference.cache
+C:\Users\gesh\Documents\GitHub\FMI-NewsFeed\Client\Newsfeed.Client\Newsfeed.Client\obj\Debug\Newsfeed.Client.dll
+C:\Users\gesh\Documents\GitHub\FMI-NewsFeed\Client\Newsfeed.Client\Newsfeed.Client\obj\Debug\Newsfeed.Client.pdb
