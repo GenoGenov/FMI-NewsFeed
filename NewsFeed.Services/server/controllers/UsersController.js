@@ -1,5 +1,7 @@
 var encryption = require('../utilities/encryption');
-var User = require('mongoose').model('User');
+var mongoose = require('mongoose');
+var User = mongoose.model('User');
+var grid = require('gridfs-stream');
 
 module.exports = {
     createUser: function (req, res, next) {
@@ -21,6 +23,21 @@ module.exports = {
                 res.send(user);
             })
         });
+    },
+    addAvatar: function (req, res, next) {
+        req.pipe(req.busboy);
+        req.busboy.on('file',function(fieldname, file, filename, encoding, mimetype){
+            grid.mongo=mongoose.mongo;
+            var gfs=grid(mongoose.connection.db);
+            file.pipe(gfs.createWriteStream(
+                {
+                    filename:filename,
+                    root:'avatars',
+                    _id:req.user ? req.user._id : '1234567'
+                }));
+            res.status(200);
+            res.end();
+        })
     },
     updateUser: function (req, res, next) {
         if (req.user._id == req.body._id || req.user.roles.indexOf('admin') > -1) {

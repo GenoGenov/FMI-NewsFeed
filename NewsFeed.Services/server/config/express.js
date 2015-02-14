@@ -2,7 +2,8 @@ var express = require('express'),
     bodyParser = require('body-parser'),
     cookieParser = require('cookie-parser'),
     session = require('express-session'),
-    passport = require('passport');
+    passport = require('passport'),
+    busboy = require('connect-busboy');
 
 module.exports = function (app, config) {
 
@@ -12,6 +13,7 @@ module.exports = function (app, config) {
         res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
         next();
     });
+    app.use(busboy());
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({extended: true}));
     app.use(session({resave: true, saveUninitialized: true, secret: 'the newsfeed project'}));
