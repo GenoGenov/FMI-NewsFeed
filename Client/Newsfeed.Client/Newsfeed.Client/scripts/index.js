@@ -29,7 +29,7 @@
         };
         $.ajax({
             type: "POST",
-            url: 'localhost:3030/api/users',
+            url: 'http://localhost:3030/api/users',
             data: JSON.stringify(userData),
             success: function () { message.text("Registration Successful!").fadeOut(3000) },
             error: function () { message.text("Registration Failed!").fadeOut(3000) },

@@ -3,6 +3,12 @@ var auth = require('./auth'),
     //validator = require('node-validator');
 
 module.exports = function (app) {
+    app.all('/', function(req, res, next) {
+        res.header("Access-Control-Allow-Origin", "*");
+        res.header("Access-Control-Allow-Headers", "X-Requested-With");
+        next();
+    });
+
     app.get('/api/users', auth.isInRole(['admin']), controllers.users.getAllUsers);
     app.delete('/api/users/:id', auth.isInRole(['admin']), controllers.users.deleteUser);
     app.post('/api/users', controllers.users.createUser);
@@ -38,9 +44,5 @@ module.exports = function (app) {
         res.render('index', {currentUser: req.user});
     });
 
-    app.all('/', function(req, res, next) {
-        res.header("Access-Control-Allow-Origin", "*");
-        res.header("Access-Control-Allow-Headers", "X-Requested-With");
-        next();
-    });
+
 };
