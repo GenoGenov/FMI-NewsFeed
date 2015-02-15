@@ -1,5 +1,6 @@
 var mongoose = require('mongoose');
 var Message = mongoose.model('Message');
+var User = mongoose.model('User');
 var validators = require('../utilities/validators');
 
 var ITEMS_LIMIT = 20;
@@ -19,17 +20,29 @@ module.exports = {
     },
     getMessages:function(req,res,next) {
         var page = validators.validatePage(req.query.page);
-        Message.find({})
-            .skip((page - 1) * ITEMS_LIMIT)
-            .limit(ITEMS_LIMIT)
-            .populate('author')
-            .populate('likes')
-            .exec(function (err, collection) {
-                if (err) {
-                    throw "Messages could not be loaded" + err;
-                }
+        User.findOne({_id:req.user._id}).populate('mutes').exec(function (err, current){
+            var arr = [];
+            for( var i=0; i<current.mutes.length; i+=1 ) {
+                arr.push(current.mutes[i]._id);
+            }
+            Message.find(
+                {
+                    author: {
+                        $nin: arr
+                    }
+                })
+                .skip((page - 1) * ITEMS_LIMIT)
+                .limit(ITEMS_LIMIT)
+                .populate('author')
+                .populate('likes')
+                .exec(function (err, collection) {
+                    if (err) {
+                        throw "Messages could not be loaded" + err;
+                    }
 
-                res.send(collection);
-            })
+                    res.send(collection);
+                })
+        })
+
     }
 };
