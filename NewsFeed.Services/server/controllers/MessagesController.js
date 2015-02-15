@@ -7,7 +7,7 @@ var ITEMS_LIMIT = 20;
 module.exports = {
     createMessage: function (req, res, next) {
         var messageData = req.body;
-        messageData.author=req.user? req.user._id : '12214235423sfwe';
+        messageData.author=req.user;
         Message.create(messageData, function (err, message) {
             if (err) {
                 console.log('Failed to create message: ' + err);

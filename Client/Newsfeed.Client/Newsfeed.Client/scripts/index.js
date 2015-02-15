@@ -12,12 +12,19 @@
             username: userNameInput.val(),
             password: passwordInput.val()
         };
+        var user = {
+            username: userNameInput.val()
+        }
+        
         $.ajax({
             type: "POST",
             url: 'http://localhost:3030/login',
             data: JSON.stringify(userData),
-            success: function () { window.location = "newsfeed.html" },
-            error: function () { message.text("Login Failed!").fadeOut(3000) },
+            success: function () {
+                localStorage.setItem('user', JSON.stringify(user));
+                window.location = "newsfeed.html"
+            },
+            error: function () { message.text("Login Failed!").fadeOut(3000);  },
             contentType: 'application/json',
             dataType: 'json',
         });
