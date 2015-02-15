@@ -34,61 +34,72 @@
     });
     
     function getMessages() {
-        $.get("http://localhost:3030/api/messages", function (data) {
-            console.log(data);
-            allMessages.html(' ');
-
-            for (var i = 0; i < data.length; i++) {
-                var msgId = data[i]._id;
-                var authorId = data[i].author._id;
-                var author = data[i].author.username;
-                var msg = data[i].content;
-                var likesCount = data[i].likes.length;
-
-                var hrefLike = '<a href = "#" class = "like" id="' + msgId + '"> Like </a>'
-                var hrefMute = '<a href = "#" class = "mute" id="' + authorId + '"> Mute </a>'
-                var message = '<div id="' + msgId + '">'
-                    + "<strong>" + author + " said: </strong>" + msg //+ ' | '
-                    + '<br />likes: ' + likesCount + ' | '
-                    + hrefLike + ' | '
-                    + hrefMute
-                    + "</div>";
-                allMessages.append(message);
+        $.ajax({
+            type: "GET",
+            url: "http://localhost:3030/api/messages",
+            success: function (data) { updateMessages(data) },//updateMessages(data),
+            contentType: 'application/json',
+            dataType: 'json',
+            xhrFields: {
+                withCredentials: true
             }
-
-            $("a.like").click(function () {
-                var clickedPostId = jQuery(this).attr("id");
-                var postUrl = 'http://localhost:3030/api/likes/like/' + clickedPostId;
-                $.ajax({
-                    type: "POST",
-                    url: postUrl,
-                    success: getMessages,
-                    error: function () { alert("Failed Like"); },
-                    contentType: 'application/json',
-                    dataType: 'json',
-                    xhrFields: {
-                        withCredentials: true
-                    },
-                });
-
-            });
-
-            $("a.mute").click(function () {
-                var clickedPostId = jQuery(this).attr("id");
-                var postUrl = 'http://localhost:3030/api/users/mute/' + clickedPostId;
-                $.ajax({
-                    type: "PUT",
-                    url: postUrl,
-                    success: getMessages(),
-                    error: function () { alert("Failed Mute"); },
-                    contentType: 'application/json',
-                    dataType: 'json',
-                    xhrFields: {
-                        withCredentials: true
-                    },
-                });
-            });
         });
     }
+
+    function updateMessages(data) {
+        console.log(data);
+        allMessages.html(' ');
+
+        for (var i = 0; i < data.length; i++) {
+            var msgId = data[i]._id;
+            var authorId = data[i].author._id;
+            var author = data[i].author.username;
+            var msg = data[i].content;
+            var likesCount = data[i].likes.length;
+
+            var hrefLike = '<a href = "#" class = "like" id="' + msgId + '"> Like </a>'
+            var hrefMute = '<a href = "#" class = "mute" id="' + authorId + '"> Mute </a>'
+            var message = '<div id="' + msgId + '">'
+                + "<strong>" + author + " said: </strong>" + msg //+ ' | '
+                + '<br />likes: ' + likesCount + ' | '
+                + hrefLike + ' | '
+                + hrefMute
+                + "</div>";
+            allMessages.append(message);
+        }
+
+        $("a.like").click(function () {
+            var clickedPostId = jQuery(this).attr("id");
+            var postUrl = 'http://localhost:3030/api/likes/like/' + clickedPostId;
+            $.ajax({
+                type: "POST",
+                url: postUrl,
+                success: getMessages,
+                error: function () { alert("Failed Like"); },
+                contentType: 'application/json',
+                dataType: 'json',
+                xhrFields: {
+                    withCredentials: true
+                },
+            });
+
+        });
+
+        $("a.mute").click(function () {
+            var clickedPostId = jQuery(this).attr("id");
+            var postUrl = 'http://localhost:3030/api/users/mute/' + clickedPostId;
+            $.ajax({
+                type: "PUT",
+                url: postUrl,
+                success: getMessages,
+                error: function () { alert("Failed Mute"); },
+                contentType: 'application/json',
+                dataType: 'json',
+                xhrFields: {
+                    withCredentials: true
+                },
+            });
+        });
+    };
    
 })
