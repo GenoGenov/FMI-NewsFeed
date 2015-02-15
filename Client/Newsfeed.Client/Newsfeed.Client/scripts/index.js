@@ -21,7 +21,7 @@
             url: 'http://localhost:3030/login',
             data: JSON.stringify(userData),
             success: function () {
-                localStorage.setItem('user', JSON.stringify(user));
+                //localStorage.setItem('user', JSON.stringify(user));
                 window.location = "newsfeed.html"
             },
             error: function () { message.text("Login Failed!").fadeOut(3000);  },

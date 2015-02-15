@@ -22,7 +22,7 @@
         $.ajax({
             type: "POST",
             url: 'http://localhost:3030/api/messages/create',
-            data: JSON.stringify({ content: 'test' }),
+            data: JSON.stringify(messageData),
             success: getMessages,
             error: function () { alert('Error sending message') },
             contentType: 'application/json',
@@ -32,36 +32,63 @@
             },
         });
     });
-
-    //muteUserButton.click(function () {
-    //    var muteUserName = muteUserInput.val();
-
-    //    var muteUserId = $.get();
-    //    var url = 'http://localhost:3030/api/users/mute/' + muteUserId;
-    //    $.ajax({
-    //        type: "PUT",
-    //        url: url,
-    //        success: getMessages,
-    //        error: function () { alert('Error mute user') },
-    //        contentType: 'application/json',
-    //        dataType: 'json',
-    //    });
-    //});
-
-
+    
     function getMessages() {
         $.get("http://localhost:3030/api/messages", function (data) {
             console.log(data);
-            var responseMessages = data.messages;
-            allMessages.text('');
+            allMessages.html(' ');
 
-            if (responseMessages) {
-                responseMessages.each(function (msg) {
-                    var message = '<div id="' + msg.id + '">' + msg.username + ": " + msg.msgText + "</div>";
-                    allMessages.append(message);
-                });
+            for (var i = 0; i < data.length; i++) {
+                var msgId = data[i]._id;
+                var authorId = data[i].author._id;
+                var author = data[i].author.username;
+                var msg = data[i].content;
+                var likesCount = data[i].likes.length;
+
+                var hrefLike = '<a href = "#" class = "like" id="' + msgId + '"> Like </a>'
+                var hrefMute = '<a href = "#" class = "mute" id="' + authorId + '"> Mute </a>'
+                var message = '<div id="' + msgId + '">'
+                    + "<strong>" + author + " said: </strong>" + msg //+ ' | '
+                    + '<br />likes: ' + likesCount + ' | '
+                    + hrefLike + ' | '
+                    + hrefMute
+                    + "</div>";
+                allMessages.append(message);
             }
 
+            $("a.like").click(function () {
+                var clickedPostId = jQuery(this).attr("id");
+                var postUrl = 'http://localhost:3030/api/likes/like/' + clickedPostId;
+                $.ajax({
+                    type: "POST",
+                    url: postUrl,
+                    success: getMessages,
+                    error: function () { alert("Failed Like"); },
+                    contentType: 'application/json',
+                    dataType: 'json',
+                    xhrFields: {
+                        withCredentials: true
+                    },
+                });
+
+            });
+
+            $("a.mute").click(function () {
+                var clickedPostId = jQuery(this).attr("id");
+                var postUrl = 'http://localhost:3030/api/users/mute/' + clickedPostId;
+                $.ajax({
+                    type: "PUT",
+                    url: postUrl,
+                    success: getMessages(),
+                    error: function () { alert("Failed Mute"); },
+                    contentType: 'application/json',
+                    dataType: 'json',
+                    xhrFields: {
+                        withCredentials: true
+                    },
+                });
+            });
         });
     }
+   
 })
