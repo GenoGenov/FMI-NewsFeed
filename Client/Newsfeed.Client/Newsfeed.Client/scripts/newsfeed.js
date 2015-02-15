@@ -2,6 +2,8 @@
     var allMessages = $("#all-messages");
     var postMessageButton = $("#submit-button");
     var userMessageInput = $("#user-message");
+    var muteUserInput = $("#mute-user");
+    var muteUserButton = $("#mute-button");
 
     var currentUser = localStorage.getItem('user');
     var currentUserName = JSON.parse(currentUser).username;
@@ -30,6 +32,21 @@
             },
         });
     });
+
+    //muteUserButton.click(function () {
+    //    var muteUserName = muteUserInput.val();
+
+    //    var muteUserId = $.get();
+    //    var url = 'http://localhost:3030/api/users/mute/' + muteUserId;
+    //    $.ajax({
+    //        type: "PUT",
+    //        url: url,
+    //        success: getMessages,
+    //        error: function () { alert('Error mute user') },
+    //        contentType: 'application/json',
+    //        dataType: 'json',
+    //    });
+    //});
 
 
     function getMessages() {
