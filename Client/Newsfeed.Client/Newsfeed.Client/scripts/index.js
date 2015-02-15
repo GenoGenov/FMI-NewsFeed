@@ -27,6 +27,9 @@
             error: function () { message.text("Login Failed!").fadeOut(3000);  },
             contentType: 'application/json',
             dataType: 'json',
+            xhrFields: {
+                withCredentials: true
+            },
         });
     });
 
@@ -43,6 +46,9 @@
             error: function () { message.text("Registration Failed!").fadeOut(3000) },
             contentType: 'application/json',
             dataType: 'json',
+            xhrFields: {
+                withCredentials: true
+            },
         });
     });
 }());

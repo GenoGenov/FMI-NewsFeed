@@ -25,6 +25,9 @@
             error: function () { alert('Error sending message') },
             contentType: 'application/json',
             dataType: 'json',
+            xhrFields: {
+                withCredentials: true
+            },
         });
     });
 
