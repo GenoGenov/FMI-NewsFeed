@@ -876,6 +876,7 @@
     <Content Include="scripts\usersRating.js" />
     <Content Include="UsersRating.html" />
     <Content Include="views\login.html" />
+    <Content Include="views\newsfeed.html" />
     <Content Include="Web.config" />
     <Content Include="scripts\jquery-1.9.1.min.map" />
   </ItemGroup>

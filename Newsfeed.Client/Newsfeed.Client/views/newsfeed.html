@@ -5,18 +5,41 @@
         <div class="pull-right">
             <label>Mute user:</label>
             <input type="text" id="mute-user" />
-            <a href="#" class="btn btn-danger btn-sm">Mute</a>
+            <a class="btn btn-danger btn-xs">Mute</a>
         </div>
         <div class="">
             <label>Post message:</label>
             <input type="text" ng-model="userMessage" />
-            <a ng-click="postMessage()" class="btn btn-primary btn-sm">Post</a>
+            <a ng-click="postMessage()" class="btn btn-primary btn-xs">Post</a>
         </div>
     </div>
 
 
-    <h2>Messages</h2>
-    <!--<div ng-repeat="">
-        
+    <h3>Messages</h3>
+
+    <!--<div ng-repeat="msg in allMessages">
+        <span>{{msg.content}}</span>
     </div>-->
+
+    <table class="table table-striped table-hover ">
+        <thead>
+            <tr>
+                <th>User</th>
+                <th>Message</th>
+                <th>Likes</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody ng-repeat ="msg in allMessages">
+            <tr>
+                <td>{{msg.author}}</td>
+                <td>{{msg.content}}</td>
+                <td>{{msg.likes.length}}</td>
+                <td>
+                    <a class="btn btn-primary btn-sm">Like</a>
+                    <a class="btn btn-danger btn-sm">Mute</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </div>

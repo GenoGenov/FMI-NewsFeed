@@ -1,9 +1,7 @@
 ﻿'use strict';
 
 app.controller('NewsfeedController', function NewsfeedController($scope, $http, $location) {
-
-    var userData = JSON.parse(localStorage.getItem('userData'));
-
+    
     $scope.getAllMessages = function () {
         $http.get('http://localhost:3030/api/messages')
             .then(function (data) {
@@ -13,14 +11,21 @@ app.controller('NewsfeedController', function NewsfeedController($scope, $http, 
             })
     }
 
-    $scope.postMessage = function(){
-        console.log({ content: $scope.userMessage });
-        $http.post('http://localhost:3030/api/messages/create', { content: $scope.userMessage })
-            .then(function (res) {
-                console.log(res);
-            }, function () {
-            })
-    }
+    //$scope.postMessage = function(){
+    //    console.log({ author: 'gosho', content: $scope.userMessage });
+    //    $scope.allMessages.push({ author: 'gosho', content: 'sss' });
+    //    //$http.post('http://localhost:3030/api/messages/create', { content: $scope.userMessage })
+    //    //    .then(function (res) {
+    //    //        console.log(res);
+    //    //    }, function () {
+    //    //    })
+    //}
+
+    //$scope.allMessages = [
+    //    { author: "asdf", content: "ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss" },
+    //    { author: "asdf", content: "ggg" },
+    //    { author: "asdf", content: "sdas" }
+    //]
 });
 
 

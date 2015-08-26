@@ -12,12 +12,12 @@ var app = angular.module('newsfeed', ['ngRoute', 'ngResource'])
                 templateUrl: 'views/newsfeed.html',
                 controller: 'NewsfeedController'
             })
-            //.when('/add-manufacturer', {
-            //    templateUrl: 'views/partials/add-manufacturer.html',
-            //    controller: 'AddManufacturerController'
-            //})
+            .when('/users-rating', {
+                templateUrl: 'views/users-rating.html',
+                controller: 'UsersRatingController'
+            })
             //.when('/add-car', {
-            //    templateUrl: 'views/partials/add-car.html',
+            //    templateUrl: 'views/partials/add-car.html'
             //    controller: 'AddCarController'
             //})
             .otherwise({ redirectTo: '/' });
