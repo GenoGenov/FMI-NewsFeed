@@ -16,24 +16,10 @@ module.exports = function (app) {
 
     app.post('/api/likes/like/:id',controllers.likes.like);
     app.get('/api/likes/last/:id',controllers.likes.getLastLike);
+    app.get('/api/likes/:id',controllers.likes.getAllLikes);
 
-//    app.get('/api/hotels', controllers.hotels.getAllHotels);
-//    app.get('/api/hotels/available'/*, auth.isAuthenticated*/, controllers.hotels.getAvailableHotels);
-//    app.get('/api/hotels/:id', auth.isAuthenticated, controllers.hotels.getHotelById);
-////    app.post('/api/hotels/:id/reservations'/*, auth.isAuthenticated*/, validator.express(app.get('reservationCheck')), controllers.reservations.makeReservation);
-//    app.post('/api/hotels/:id/reservation', auth.isAuthenticated, controllers.reservations.makeReservation);
-//    app.post('/api/hotels', auth.isInRole(['admin', 'owner']), controllers.hotels.createHotel);
-//    app.delete('/api/hotels/:id', auth.isAuthenticated, controllers.hotels.deleteHotel);
-//
-//    app.post('/api/hotels/:id/rooms', auth.isInRole(['admin', 'owner']), controllers.rooms.createRoom);
-//    app.delete('/api/hotels/:id/rooms/:roomId', auth.isInRole(['admin', 'owner']), controllers.rooms.deleteRoom);
-//
-//    app.post('/api/hotels/:id/rate', controllers.rating.rateHotel);
-//    app.get('/api/stats', controllers.statistics.getStatistics);
-//
-//    app.get('/partials/:partialArea/:partialName', function (req, res) {
-//        res.render('../../public/app/' + req.params.partialArea + '/' + req.params.partialName)
-//    });
+    app.get('/api/notifications',controllers.notifications.getAllNotifications);
+    app.get('/api/notifications/unread',controllers.notifications.getUnreadNotifications);
 
     app.post('/login', auth.login);
     app.post('/logout', auth.logout);

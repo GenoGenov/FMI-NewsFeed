@@ -1,14 +1,12 @@
 var usersController = require('../controllers/usersController');
 var likesController = require('../controllers/LikesController');
 var messagesController = require('../controllers/MessagesController');
+var notificationsController = require('../controllers/NotificationsController');
 
 
 module.exports = {
     users: usersController,
     likes: likesController,
-    messages:messagesController
-    //reservations: reservationsController,
-    //rooms: roomsController,
-    //statistics : statisticsController,
-    //rating : ratingController
+    messages:messagesController,
+    notifications:notificationsController
 };
