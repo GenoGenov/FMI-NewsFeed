@@ -1,13 +1,12 @@
 ﻿'use strict';
 
 app.controller('NewsfeedController', function NewsfeedController($scope, $http, $location) {
-
-    var userData = JSON.parse(localStorage.getItem('userData'));
-
+    $scope.allMessages = [];
     $scope.getAllMessages = function () {
         $http.get('http://localhost:3030/api/messages')
-            .then(function (data) {
-                console.log(data);
+            .then(function (res) {
+                console.log(res);
+                $scope.allMessages = res.data;
             }, function () {
 
             })
@@ -15,43 +14,49 @@ app.controller('NewsfeedController', function NewsfeedController($scope, $http, 
 
     $scope.postMessage = function(){
         console.log({ content: $scope.userMessage });
+        $scope.allMessages.push({ author: 'gosho', content: 'sss' });
         $http.post('http://localhost:3030/api/messages/create', { content: $scope.userMessage })
             .then(function (res) {
-                console.log(res);
-            }, function () {
+                $scope.getAllMessages();
+            }, function (err) {
+                alert(err);
             })
+    }
+
+    $scope.like = function (id) {
+        var postUrl = 'http://localhost:3030/api/likes/like/' + id;
+        $http.post(postUrl)
+            .then(function () {
+                $scope.getAllMessages();
+            }, function (err) {
+                alert(err);
+            });
+    }
+
+    $scope.mute = function (id) {
+        var putUrl = 'http://localhost:3030/api/users/mute/' + id;
+        $http.put(putUrl)
+            .then(function () {
+                $scope.getAllMessages();
+            }, function (err) {
+                console.log(err);
+            });
     }
 });
 
 
-//var messageData = {
-//    //author: currentUserName,
-//    content: messageText
-//};
-//console.log(messageData);
-//$.ajax({
-//    type: "POST",
-//    url: 'http://localhost:3030/api/messages/create',
-//    data: JSON.stringify(messageData),
-//    success: getMessages,
-//    error: function () { alert('Error sending message') },
-//    contentType: 'application/json',
-//    dataType: 'json',
-//    xhrFields: {
-//        withCredentials: true
-//    },
-//});
-
-
-//function getMessages() {
+//$("a.mute").click(function () {
+//    var clickedPostId = jQuery(this).attr("id");
+//    var postUrl = 'http://localhost:3030/api/users/mute/' + clickedPostId;
 //    $.ajax({
-//        type: "GET",
-//        url: "http://localhost:3030/api/messages",
-//        success: function (data) { updateMessages(data) },//updateMessages(data),
+//        type: "PUT",
+//        url: postUrl,
+//        success: getMessages,
+//        error: function () { alert("Failed Mute"); },
 //        contentType: 'application/json',
 //        dataType: 'json',
 //        xhrFields: {
 //            withCredentials: true
-//        }
+//        },
 //    });
-//}
+//});

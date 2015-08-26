@@ -6,8 +6,6 @@ app.controller('LoginController', function LoginController($scope, $http, $locat
         $http.post('http://localhost:3030/login', $scope.vm)
         .then(function (res) {
             // go to newsfeed page
-            console.log(JSON.stringify(res.data.user));
-            localStorage.setItem('userData', JSON.stringify(res.data.user));
             $location.path('/newsfeed')
         }, function (err) {
             $scope.message = err.data.message;
