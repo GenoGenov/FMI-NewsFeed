@@ -1,0 +1,22 @@
+﻿<div ng-controller="NewsfeedController" style="padding:20px;">
+    <h1 ng-init="getAllMessages()">Newsfeed</h1>
+
+    <div>
+        <div class="pull-right">
+            <label>Mute user:</label>
+            <input type="text" id="mute-user" />
+            <a href="#" class="btn btn-danger btn-sm">Mute</a>
+        </div>
+        <div class="">
+            <label>Post message:</label>
+            <input type="text" ng-model="userMessage" />
+            <a ng-click="postMessage()" class="btn btn-primary btn-sm">Post</a>
+        </div>
+    </div>
+
+
+    <h2>Messages</h2>
+    <!--<div ng-repeat="">
+        
+    </div>-->
+</div>

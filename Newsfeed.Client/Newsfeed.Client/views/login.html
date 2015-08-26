@@ -1,0 +1,28 @@
+﻿<div class="jumbotron" ng-controller="LoginController">
+    <form class="form-horizontal">
+        <fieldset>
+            <legend class="text-center">Login/Register</legend>
+            <div class="form-group">
+                <label for="inputEmail" class="col-lg-2 control-label">Email</label>
+                <div class="col-lg-8">
+                    <input class="form-control" id="inputEmail" placeholder="Email" type="text" ng-model="vm.username" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputPassword" class="col-lg-2 control-label">Password</label>
+                <div class="col-lg-8">
+                    <input class="form-control" id="inputPassword" placeholder="Password" type="password" ng-model="vm.password" required>
+                </div>
+            </div>
+            <div class="form-group text-center">
+                <span class="col-lg-12" ng-bind="message"></span>
+            </div>
+            <div class="form-group">
+                <div class="col-lg-10 col-lg-offset-2">
+                    <button type="reset" class="btn btn-default" ng-click="register()">Register</button>
+                    <button type="submit" class="btn btn-primary" ng-click="login()">Login</button>
+                </div>
+            </div>
+</fieldset>
+    </form>
+</div>
