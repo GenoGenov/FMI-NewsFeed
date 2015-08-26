@@ -32,12 +32,12 @@
         </thead>
         <tbody ng-repeat ="msg in allMessages">
             <tr>
-                <td>{{msg.author}}</td>
+                <td>{{msg.author.username}}</td>
                 <td>{{msg.content}}</td>
                 <td>{{msg.likes.length}}</td>
                 <td>
-                    <a class="btn btn-primary btn-sm">Like</a>
-                    <a class="btn btn-danger btn-sm">Mute</a>
+                    <a class="btn btn-primary btn-sm" ng-click="like(msg._id)">Like</a>
+                    <a class="btn btn-danger btn-sm" ng-click="mute(msg.author._id)">Mute</a>
                 </td>
             </tr>
         </tbody>

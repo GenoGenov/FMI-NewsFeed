@@ -16,9 +16,5 @@ var app = angular.module('newsfeed', ['ngRoute', 'ngResource'])
                 templateUrl: 'views/users-rating.html',
                 controller: 'UsersRatingController'
             })
-            //.when('/add-car', {
-            //    templateUrl: 'views/partials/add-car.html'
-            //    controller: 'AddCarController'
-            //})
             .otherwise({ redirectTo: '/' });
     }])
