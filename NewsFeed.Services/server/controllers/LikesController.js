@@ -5,19 +5,12 @@ var Svc = require('../services/NotificationService');
 
 module.exports = {
     like: function (req, res, next) {
-        Message.findOne({_id: req.params.id}).exec(function (err, message) {
-            if (err || !message) {
+        Message.update({_id: req.params.id}, {$push: {likes: req.user._id}}, {multi: false}, function (err) {
+            if (err) {
                 res.status(400).json({message: 'Message could not be liked: ' + err});
             } else {
-                message.likes.push(req.user._id);
-                message.save(function (err, msg) {
-                    if (err) {
-                        res.status(400).json({message: 'Message could not be liked: ' + err})
-                    } else {
-                        Svc.createNotification({messageId: msg._id}, req.user._id);
-                        res.status(200).json(msg);
-                    }
-                });
+                Svc.createNotification({messageId: req.params.id}, req.user._id);
+                res.status(200).json({message: 'Liked message: ' + req.params.id});
             }
         });
     },

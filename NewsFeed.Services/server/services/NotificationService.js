@@ -11,23 +11,24 @@ module.exports = {
         notificationData.message = data.messageId;
         notificationData.author = authorId;
 
-        Message.findOne({_id: req.body.messageId}).populate('author').exec(function (err, msg) {
+        Message.findOne({_id: data.messageId}).populate('author').exec(function (err, msg) {
             if (err) {
                 console.log('Failed to create notification: ' + err);
                 res.status(400).json({message: err});
             } else {
                 notificationData.owner = msg.author._id;
-                var content = msg.content.length > 10 ? msg.content.substring(0,10)+'...' : msg.content;
-                notificationData.content = data.content || 'User '+msg.author.username+'liked your message "'+content+'"';
+                var content = msg.content.length > 10 ? msg.content.substring(0, 10) + '...' : msg.content;
+                notificationData.content = data.content || 'User ' + msg.author.username + ' liked your message "' + content + '"';
                 notificationData.read = false;
 
-                Notificaion.create(notificationData, function (err, notification) {
+                Notification.create(notificationData, function (err, notification) {
                     if (err) {
                         console.log('Failed to create notification: ' + err);
                     }
                     if (callback) {
                         callback(notification);
-                    };
+                    }
+                    ;
                 });
             }
         });
