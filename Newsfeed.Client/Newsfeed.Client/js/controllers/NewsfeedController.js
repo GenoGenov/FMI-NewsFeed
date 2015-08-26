@@ -13,8 +13,6 @@ app.controller('NewsfeedController', function NewsfeedController($scope, $http, 
     }
 
     $scope.postMessage = function(){
-        console.log({ content: $scope.userMessage });
-        $scope.allMessages.push({ author: 'gosho', content: 'sss' });
         $http.post('http://localhost:3030/api/messages/create', { content: $scope.userMessage })
             .then(function (res) {
                 $scope.getAllMessages();
@@ -24,9 +22,12 @@ app.controller('NewsfeedController', function NewsfeedController($scope, $http, 
     }
 
     $scope.like = function (id) {
+        console.log('to like');
+        console.log(id);
         var postUrl = 'http://localhost:3030/api/likes/like/' + id;
         $http.post(postUrl)
             .then(function () {
+                console.log('liked');
                 $scope.getAllMessages();
             }, function (err) {
                 alert(err);

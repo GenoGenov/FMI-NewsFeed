@@ -12,6 +12,7 @@ angular.module('newsfeed').controller('NavController', function NavController($s
     $scope.logout = function () {
         $http.post('http://localhost:3030/logout', {}).then(function () {
             $scope.user.logged = false;
+            $location.path('/');
         }).catch(function () {
         });
     };
@@ -20,17 +21,3 @@ angular.module('newsfeed').controller('NavController', function NavController($s
         $scope.user.logged = true;
     });
 });
-
-
-//$.ajax({
-//    type: "POST",
-//    url: 'http://localhost:3030/api/users',
-//    data: JSON.stringify(userData),
-//    success: function () { message.text("Registration Successful!").fadeOut(3000) },
-//    error: function () { message.text("Registration Failed!").fadeOut(3000) },
-//    contentType: 'application/json',
-//    dataType: 'json',
-//    xhrFields: {
-//        withCredentials: true
-//    },
-//});
