@@ -5,7 +5,7 @@ app.controller('NewsfeedController', function NewsfeedController($scope, $http, 
     var userData = JSON.parse(localStorage.getItem('userData'));
 
     $scope.getAllMessages = function () {
-        $http.get('http://localhost:3030/api/messages', {withCredentials: true})
+        $http.get('http://localhost:3030/api/messages')
             .then(function (data) {
                 console.log(data);
             }, function () {

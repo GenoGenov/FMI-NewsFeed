@@ -1,7 +1,8 @@
 ﻿'use strict';
 
 var app = angular.module('newsfeed', ['ngRoute', 'ngResource'])
-    .config(['$routeProvider', function ($routeProvider) {
+    .config(['$routeProvider', '$httpProvider', function ($routeProvider, $httpProvider) {
+        $httpProvider.defaults.withCredentials = true;
         $routeProvider
             .when('/login', {
                 templateUrl: 'views/login.html',
