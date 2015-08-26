@@ -5,13 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="01a64126-7c9e-4efa-8955-f8f4d88884cd" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\Projects\FMI-NewsFeed\Newsfeed.Client\Newsfeed.Client\js\controllers\LoginController.js" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Newsfeed.Client/Newsfeed.Client/Newsfeed.Client.csproj" afterPath="$PROJECT_DIR$/Newsfeed.Client/Newsfeed.Client/Newsfeed.Client.csproj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Newsfeed.Client/Newsfeed.Client/js/app.js" afterPath="$PROJECT_DIR$/Newsfeed.Client/Newsfeed.Client/js/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NewsFeed.Services/server/config/express.js" afterPath="$PROJECT_DIR$/NewsFeed.Services/server/config/express.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Newsfeed.Client/Newsfeed.Client/index.html" afterPath="$PROJECT_DIR$/Newsfeed.Client/Newsfeed.Client/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Newsfeed.Client/Newsfeed.Client/views/login.html" afterPath="$PROJECT_DIR$/Newsfeed.Client/Newsfeed.Client/views/login.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NewsFeed.Services/server/controllers/MessagesController.js" afterPath="$PROJECT_DIR$/NewsFeed.Services/server/controllers/MessagesController.js" />
     </list>
     <ignored path="FMI-NewsFeed.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -45,8 +39,8 @@
       <file leaf-file-name="MessagesController.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/NewsFeed.Services/server/controllers/MessagesController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.38807648">
-              <caret line="21" column="8" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
+            <state vertical-scroll-proportion="0.6749156">
+              <caret line="36" column="34" selection-start-line="36" selection-start-column="34" selection-end-line="36" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -97,7 +91,9 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
+              <folding>
+                <marker date="1440621750495" expanded="true" signature="705:707" placeholder="//..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -152,7 +148,6 @@
         <option value="$PROJECT_DIR$/NewsFeed.Services/server/models/Like.js" />
         <option value="$PROJECT_DIR$/NewsFeed.Services/server/models/User.js" />
         <option value="$PROJECT_DIR$/NewsFeed.Services/server/models/Message.js" />
-        <option value="$PROJECT_DIR$/NewsFeed.Services/server/controllers/MessagesController.js" />
         <option value="$PROJECT_DIR$/NewsFeed.Services/server/controllers/NotificationsController.js" />
         <option value="$PROJECT_DIR$/NewsFeed.Services/server/services/NotificationService.js" />
         <option value="$PROJECT_DIR$/NewsFeed.Services/server/controllers/index.js" />
@@ -161,6 +156,7 @@
         <option value="$PROJECT_DIR$/NewsFeed.Services/server/config/mongoose.js" />
         <option value="$PROJECT_DIR$/NewsFeed.Services/server/models/Notification.js" />
         <option value="$PROJECT_DIR$/NewsFeed.Services/server/config/express.js" />
+        <option value="$PROJECT_DIR$/NewsFeed.Services/server/controllers/MessagesController.js" />
       </list>
     </option>
   </component>
@@ -729,7 +725,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1692" height="1026" extended-state="1" />
+    <frame x="-8" y="-8" width="1692" height="1026" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1125,7 +1121,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1440621750495" expanded="true" signature="705:707" placeholder="//..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1171,8 +1169,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/NewsFeed.Services/server/controllers/MessagesController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.38807648">
-          <caret line="21" column="8" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
+        <state vertical-scroll-proportion="0.6749156">
+          <caret line="36" column="34" selection-start-line="36" selection-start-column="34" selection-end-line="36" selection-end-column="34" />
           <folding />
         </state>
       </provider>

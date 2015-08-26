@@ -19,7 +19,7 @@ module.exports = {
         });
     },
     getMessages:function(req,res,next) {
-        var page = validators.validatePage(req.query.page);
+        //var page = validators.validatePage(req.query.page);
         User.findOne({_id:req.user._id}).populate('mutes').exec(function (err, current){
             var arr = [];
             for( var i=0; i<current.mutes.length; i+=1 ) {
@@ -31,7 +31,7 @@ module.exports = {
                         $nin: arr
                     }
                 })
-                .skip((page - 1) * ITEMS_LIMIT)
+                .sort({$natural:-1})
                 .limit(ITEMS_LIMIT)
                 .populate('author')
                 .populate('likes')
