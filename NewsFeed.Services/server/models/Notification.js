@@ -11,11 +11,6 @@ var notificationSchema = mongoose.Schema({
     read: Boolean
 });
 
-messageSchema.method({
-    //authenticate: function (password) {
-    //    return encryption.generateHashedPassword(this.salt, password) === this.hashPass;
-    //}
-});
 
 var Notification = mongoose.model('Notification', notificationSchema);
 

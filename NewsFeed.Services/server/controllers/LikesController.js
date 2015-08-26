@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 var Message = mongoose.model('Message');
-var Svc = require('NotificationService');
+var Svc = require('../services/NotificationService');
 
 
 module.exports = {

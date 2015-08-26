@@ -1,6 +1,7 @@
 var mongoose = require('mongoose'),
     user = require('../models/User'),
-    message=require('../models/Message')
+    message=require('../models/Message'),
+    notification = require('../models/Notification')
 
 
 module.exports = function (config) {
