@@ -4,8 +4,8 @@ var auth = require('./auth'),
 
 module.exports = function (app) {
 
-    app.get('/api/users', auth.isInRole(['admin']), controllers.users.getAllUsers);
-    app.delete('/api/users/:id', auth.isInRole(['admin']), controllers.users.deleteUser);
+    app.get('/api/users', controllers.users.getAllUsers);
+    app.delete('/api/users/:id', controllers.users.deleteUser);
     app.post('/api/users', controllers.users.createUser);
     app.post('/api/users/avatar', controllers.users.addAvatar);
     app.put('/api/users', auth.isAuthenticated, controllers.users.updateUser);

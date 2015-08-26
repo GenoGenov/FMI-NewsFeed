@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="01a64126-7c9e-4efa-8955-f8f4d88884cd" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NewsFeed.Services/server/controllers/MessagesController.js" afterPath="$PROJECT_DIR$/NewsFeed.Services/server/controllers/MessagesController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NewsFeed.Services/server/config/routes.js" afterPath="$PROJECT_DIR$/NewsFeed.Services/server/config/routes.js" />
     </list>
     <ignored path="FMI-NewsFeed.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,11 +36,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MessagesController.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MessagesController.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/NewsFeed.Services/server/controllers/MessagesController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6749156">
-              <caret line="36" column="34" selection-start-line="36" selection-start-column="34" selection-end-line="36" selection-end-column="34" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="19" column="6" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -108,11 +108,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="routes.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="routes.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/NewsFeed.Services/server/config/routes.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="14" column="70" selection-start-line="14" selection-start-column="57" selection-end-line="14" selection-end-column="70" />
+            <state vertical-scroll-proportion="0.15298088">
+              <caret line="8" column="57" selection-start-line="8" selection-start-column="57" selection-end-line="8" selection-end-column="57" />
               <folding />
             </state>
           </provider>
@@ -151,12 +151,12 @@
         <option value="$PROJECT_DIR$/NewsFeed.Services/server/controllers/NotificationsController.js" />
         <option value="$PROJECT_DIR$/NewsFeed.Services/server/services/NotificationService.js" />
         <option value="$PROJECT_DIR$/NewsFeed.Services/server/controllers/index.js" />
-        <option value="$PROJECT_DIR$/NewsFeed.Services/server/config/routes.js" />
         <option value="$PROJECT_DIR$/NewsFeed.Services/server/controllers/LikesController.js" />
         <option value="$PROJECT_DIR$/NewsFeed.Services/server/config/mongoose.js" />
         <option value="$PROJECT_DIR$/NewsFeed.Services/server/models/Notification.js" />
         <option value="$PROJECT_DIR$/NewsFeed.Services/server/config/express.js" />
         <option value="$PROJECT_DIR$/NewsFeed.Services/server/controllers/MessagesController.js" />
+        <option value="$PROJECT_DIR$/NewsFeed.Services/server/config/routes.js" />
       </list>
     </option>
   </component>
@@ -169,7 +169,6 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
-    <option name="y" value="-8" />
     <option name="width" value="1692" />
     <option name="height" value="1026" />
   </component>
@@ -725,8 +724,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1692" height="1026" extended-state="0" />
-    <editor active="true" />
+    <frame x="-8" y="0" width="1692" height="1026" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1143,14 +1142,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/NewsFeed.Services/server/config/routes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="70" selection-start-line="14" selection-start-column="57" selection-end-line="14" selection-end-column="70" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/NewsFeed.Services/server/config/auth.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1169,8 +1160,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/NewsFeed.Services/server/controllers/MessagesController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6749156">
-          <caret line="36" column="34" selection-start-line="36" selection-start-column="34" selection-end-line="36" selection-end-column="34" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="6" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NewsFeed.Services/server/config/routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.15298088">
+          <caret line="8" column="57" selection-start-line="8" selection-start-column="57" selection-end-line="8" selection-end-column="57" />
           <folding />
         </state>
       </provider>
