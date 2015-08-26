@@ -29,10 +29,9 @@
 
                     <ul ng-show="!user.logged" class="nav navbar-nav navbar-right">
                         <li><a href="#/login">Login</a></li>
-                        <li><a href="#/logout">Logout</a></li>
                     </ul>
                     <ul ng-show="user.logged" class="nav navbar-nav navbar-right">
-                        <li>Hello, <button class="btn btn-link" ng-click="logout()">Logout</button></li>
+                        <li><button class="btn btn-link" ng-click="logout()">Logout</button></li>
                     </ul>
                 </div>
             </div>
