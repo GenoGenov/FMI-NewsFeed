@@ -4,13 +4,13 @@
         <thead>
             <tr>
                 <th>User</th>
-                <th>Likes </th>
+                <th>Muted times </th>
             </tr>
         </thead>
         <tbody ng-repeat="user in allUsers">
             <tr>
-                <td>{{user.author.username}}</td>
-                <td>{{user.likes.length}}</td>
+                <td>{{user.username}}</td>
+                <td>{{user.mutes.length}}</td>
             </tr>
         </tbody>
     </table>

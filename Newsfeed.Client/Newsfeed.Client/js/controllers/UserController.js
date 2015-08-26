@@ -12,7 +12,7 @@ app.controller('UserController', function LoginController($scope, $http, $locati
             $scope.$emit('logged');
             $location.path('/newsfeed')
         }, function (err) {
-            $scope.message = err.data.message;
+            //$scope.message = err.data.message;
         });
     }
 
@@ -25,22 +25,8 @@ app.controller('UserController', function LoginController($scope, $http, $locati
             // go to newsfeed page
             console.log(res);
         }, function (err) {
-            $scope.message = err.data.message;
+            //$scope.message = err.data.message;
             console.log(err.data.message);
         });
     };
 });
-
-
-//$.ajax({
-//    type: "POST",
-//    url: 'http://localhost:3030/api/users',
-//    data: JSON.stringify(userData),
-//    success: function () { message.text("Registration Successful!").fadeOut(3000) },
-//    error: function () { message.text("Registration Failed!").fadeOut(3000) },
-//    contentType: 'application/json',
-//    dataType: 'json',
-//    xhrFields: {
-//        withCredentials: true
-//    },
-//});

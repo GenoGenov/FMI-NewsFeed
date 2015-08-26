@@ -8,7 +8,6 @@ app.controller('NewsfeedController', function NewsfeedController($scope, $http, 
                 console.log(res);
                 $scope.allMessages = res.data;
             }, function () {
-
             })
     }
 
@@ -17,20 +16,17 @@ app.controller('NewsfeedController', function NewsfeedController($scope, $http, 
             .then(function (res) {
                 $scope.getAllMessages();
             }, function (err) {
-                alert(err);
+                console.log(err);
             })
     }
 
     $scope.like = function (id) {
-        console.log('to like');
-        console.log(id);
         var postUrl = 'http://localhost:3030/api/likes/like/' + id;
         $http.post(postUrl)
             .then(function () {
-                console.log('liked');
                 $scope.getAllMessages();
             }, function (err) {
-                alert(err);
+                console.log(err);
             });
     }
 
@@ -44,20 +40,3 @@ app.controller('NewsfeedController', function NewsfeedController($scope, $http, 
             });
     }
 });
-
-
-//$("a.mute").click(function () {
-//    var clickedPostId = jQuery(this).attr("id");
-//    var postUrl = 'http://localhost:3030/api/users/mute/' + clickedPostId;
-//    $.ajax({
-//        type: "PUT",
-//        url: postUrl,
-//        success: getMessages,
-//        error: function () { alert("Failed Mute"); },
-//        contentType: 'application/json',
-//        dataType: 'json',
-//        xhrFields: {
-//            withCredentials: true
-//        },
-//    });
-//});

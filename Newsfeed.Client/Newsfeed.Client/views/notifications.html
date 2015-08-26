@@ -1,0 +1,10 @@
+﻿<div ng-controller="NotificationsController" ng-init="getUnreadNotifications()">
+    <h1>Notifications</h1>
+    <div ng-repeat="notif in unreadNotifications">
+        <div class="alert alert-dismissible alert-success">
+            <button type="button" class="close" data-dismiss="alert" ng-click="read(notif._id)">×</button>
+            <strong>New notification! </strong> {{notif.content}}
+        </div>
+    </div>
+
+</div>

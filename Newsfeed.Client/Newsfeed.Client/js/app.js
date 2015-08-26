@@ -16,5 +16,9 @@ var app = angular.module('newsfeed', ['ngRoute', 'ngResource','ngCookies'])
                 templateUrl: 'views/users-rating.html',
                 controller: 'UsersRatingController'
             })
+            .when('/notifications', {
+                templateUrl: 'views/notifications.html',
+                controller: 'NotificationsController'
+            })
             .otherwise({ redirectTo: '/' });
     }])
