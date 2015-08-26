@@ -59,8 +59,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="js\app.js" />
-    <Content Include="js\controllers\LoginController.js" />
+    <Content Include="js\controllers\NavController.js" />
+    <Content Include="js\controllers\UserController.js" />
     <Content Include="js\controllers\NewsfeedController.js" />
+    <Content Include="js\services\UserService.js" />
     <Content Include="scripts\angular-animate.js" />
     <Content Include="scripts\angular-animate.min.js" />
     <Content Include="scripts\angular-aria.js" />

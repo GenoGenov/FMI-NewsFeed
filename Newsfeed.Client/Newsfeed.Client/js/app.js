@@ -1,12 +1,12 @@
 ﻿'use strict';
 
-var app = angular.module('newsfeed', ['ngRoute', 'ngResource'])
+var app = angular.module('newsfeed', ['ngRoute', 'ngResource','ngCookies'])
     .config(['$routeProvider', '$httpProvider', function ($routeProvider, $httpProvider) {
         $httpProvider.defaults.withCredentials = true;
         $routeProvider
             .when('/login', {
                 templateUrl: 'views/login.html',
-                controller: 'LoginController'
+                controller: 'UserController'
             })
             .when('/newsfeed', {
                 templateUrl: 'views/newsfeed.html',
