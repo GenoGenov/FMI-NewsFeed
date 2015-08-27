@@ -859,7 +859,6 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="index.html" />
-    <Content Include="newsfeed.html" />
     <Content Include="packages.config" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -870,13 +869,9 @@
     <None Include="scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="scripts\bootstrap.js" />
     <Content Include="scripts\bootstrap.min.js" />
-    <Content Include="scripts\index.js" />
     <Content Include="scripts\jquery-1.9.1.js" />
     <Content Include="scripts\jquery-1.9.1.min.js" />
-    <Content Include="scripts\newsfeed.js" />
     <Content Include="scripts\npm.js" />
-    <Content Include="scripts\usersRating.js" />
-    <Content Include="UsersRating.html" />
     <Content Include="views\login.html" />
     <Content Include="views\newsfeed.html" />
     <Content Include="views\users-rating.html" />
